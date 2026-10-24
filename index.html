@@ -4,80 +4,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Baby 🧸💗</title>
+<title>For My Babyyyy 🧸🎀💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap');
-
 * { box-sizing: border-box; }
+
+:root {
+  --pink: #ff69a6;
+  --dark-pink: #d9367c;
+  --light-pink: #fff0f7;
+}
 
 body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Nunito', sans-serif;
-  background: linear-gradient(135deg, #ffd6e7, #fff0f5, #ffc1dc);
+  background: linear-gradient(135deg, #ffd6e8, #fff6fb, #ffc4df, #ffe9f3);
+  background-size: 300% 300%;
+  animation: bgDream 12s ease infinite;
   color: #a52d63;
   text-align: center;
   overflow-x: hidden;
-  padding: 1px 0;
+  padding: 1px 0 35px;
+}
+
+@keyframes bgDream {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .heart {
   position: fixed;
-  bottom: -50px;
+  bottom: -60px;
   z-index: 0;
   pointer-events: none;
-  animation: float 6s linear forwards;
+  animation: floatUp 6s linear forwards;
+  filter: drop-shadow(0 3px 5px #ff82b544);
 }
 
-@keyframes float {
-  to { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .container {
   position: relative;
   z-index: 1;
-  width: min(92%, 540px);
-  margin: 30px auto;
-  padding: 25px 20px;
-  background: rgba(255,255,255,0.90);
+  width: min(93%, 560px);
+  margin: 25px auto;
+  padding: 27px 19px;
+  background: rgba(255,255,255,0.92);
   border: 3px solid #ffafd0;
-  border-radius: 30px;
-  box-shadow: 0 10px 35px #d94d8b30;
+  border-radius: 35px;
+  box-shadow: 0 12px 40px #d94d8b35, 0 0 25px #ffb6d855;
+}
+
+.container::before {
+  content: "୨୧ 🎀 ୨୧";
+  display: block;
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: #f46da5;
 }
 
 .teddy {
   font-size: 75px;
   animation: hug 2s infinite ease-in-out;
+  filter: drop-shadow(0 5px 8px #ffb1d044);
 }
 
 @keyframes hug {
-  0%, 100% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg) scale(1.06); }
+  0%, 100% { transform: rotate(-5deg) scale(1); }
+  50% { transform: rotate(5deg) scale(1.08); }
 }
 
 h1 {
   font-family: 'Pacifico', cursive;
   color: #ed4b91;
   font-size: clamp(27px, 7vw, 39px);
-  margin: 12px 0;
+  margin: 14px 0;
+  text-shadow: 2px 3px 0 #ffe0ed;
 }
 
 h2 { color: #e54889; }
 
 p { line-height: 1.9; }
 
-.tag { font-size: 17px; font-weight: 800; }
+.tag {
+  font-size: 17px;
+  font-weight: 900;
+  color: #d83f83;
+}
+
+.sparkle-line {
+  font-size: 23px;
+  margin: 13px 0;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { transform: scale(0.97); }
+  to { transform: scale(1.06); }
+}
 
 .letter {
   margin: 22px 0;
   padding: 20px;
-  background: #fff0f6;
+  background: linear-gradient(145deg, #fff0f6, #fff8fc);
   border: 2px dashed #ff9fc6;
-  border-radius: 22px;
+  border-radius: 25px;
   line-height: 2;
   text-align: left;
   overflow-wrap: anywhere;
+  box-shadow: inset 0 0 20px #ffcce055;
 }
 
 .big {
@@ -95,12 +140,21 @@ button {
   padding: 14px 20px;
   cursor: pointer;
   touch-action: manipulation;
+  transition: transform .2s, box-shadow .2s;
 }
+
+button:active { transform: scale(.94); }
 
 .yes {
   color: white;
-  background: linear-gradient(135deg, #ff65a0, #e92f7e);
+  background: linear-gradient(135deg, #ff80b5, #ec3684);
   box-shadow: 0 6px 18px #ed4b9140;
+  animation: yesPulse 1.8s infinite;
+}
+
+@keyframes yesPulse {
+  0%, 100% { box-shadow: 0 6px 18px #ed4b9140; }
+  50% { box-shadow: 0 6px 24px #ed4b91a0; }
 }
 
 .no {
@@ -112,9 +166,14 @@ button {
 
 .question {
   margin-top: 30px;
-  padding: 20px 8px;
-  background: #fff5f9;
-  border-radius: 22px;
+  padding: 20px 9px;
+  background: linear-gradient(135deg, #fff5f9, #ffe6f1);
+  border: 2px solid #ffd0e4;
+  border-radius: 25px;
+}
+
+.question h2 {
+  font-size: clamp(20px, 5vw, 25px);
 }
 
 .buttons {
@@ -126,17 +185,24 @@ button {
   min-height: 85px;
 }
 
+#tease {
+  font-weight: 800;
+  color: #d94d8b;
+}
+
 #answer {
   display: none;
   margin-top: 24px;
-  padding: 22px 15px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #ffe0ed, #fff0f5);
-  animation: pop 0.6s ease;
+  padding: 24px 14px;
+  border: 2px solid #ffafd0;
+  border-radius: 27px;
+  background: linear-gradient(135deg, #ffe0ed, #fff0f5, #ffd5e8);
+  box-shadow: 0 5px 22px #ed4b9130;
+  animation: pop .6s ease;
 }
 
 @keyframes pop {
-  from { opacity: 0; transform: scale(0.7); }
+  from { opacity: 0; transform: scale(.7); }
   to { opacity: 1; transform: scale(1); }
 }
 
@@ -144,17 +210,49 @@ button {
   font-family: 'Pacifico', cursive;
   font-size: clamp(25px, 6vw, 36px);
   color: #ed3184;
+  line-height: 1.7;
+  text-shadow: 2px 3px 0 white;
 }
 
 .footer {
   font-size: 14px;
+  font-weight: 800;
   color: #c36b91;
-  margin-top: 25px;
+  margin-top: 28px;
+}
+
+.final-love {
+  margin-top: 28px;
+  padding: 20px 10px 5px;
+  border-top: 2px dashed #ffafd0;
+}
+
+.final-love p {
+  font-weight: 900;
+  color: #df4388;
+}
+
+.big-cry {
+  font-size: clamp(100px, 28vw, 165px);
+  line-height: 1.3;
+  display: block;
+  margin: 4px auto 0;
+  filter: drop-shadow(0 8px 10px #ed4b9140);
+  animation: cryBaby 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes cryBaby {
+  0%, 100% { transform: scale(1) rotate(-4deg); }
+  50% { transform: scale(1.12) rotate(4deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .teddy { animation: none; }
-  .heart { animation-duration: 0.01ms; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
 </head>
@@ -165,39 +263,44 @@ button {
 
   <div class="teddy">🧸💗🧸</div>
 
+  <div class="sparkle-line">✨ ˚₊‧꒰ა 🎀 ໒꒱ ‧₊˚ ✨</div>
+
   <h1>Helloooo My Babyyyyy! 🎀</h1>
 
   <p class="tag">
-    Mere mannn, mere babyyyy, meri jaanuuu 😭💋💗
+    Myyyy mannn, myyyyy babyyyy, myyyy jaanuuu 😭💋💗🫂
   </p>
 
   <p>
-    Ek chhotu sa message hai aapke liyeee 🥺👉👈
-    Please poora padh lenaaa, babyyyy! 💌
+    Ek chhotu sa message hai aapke liyeee 🥺👉👈💌<br>
+    Please poora padh lenaaa, babyyyy! 🧸💗
   </p>
 
+  <div class="sparkle-line">🌷 💕 🦋 💕 🌷</div>
+
   <div class="letter">
-    <p class="big">Dear my mannnnn 💗🧸</p>
+    <p class="big">Dear my mannnnn 💗🧸🎀</p>
 
     mene esa nhi socha tha k tujhe sab vahi chahiye i love to listen yr but the problem is k yr hum public me milte hai and u said k bhai vanshika hum public me milte nhi hai private me milte nhi hai but januu ik im afraid with this all thing yaad haina metro wala bhai usse mujhe bht daar lagta hai but babyy im sooo sorry for this that im so afraid of all this im trying to improve each thing with youu and rahi baat teri overthinkiing yr januu mene genuuinely nhi sunna tha vo i was in my deluluu kuchupuchuu mene tujhe se pucha bhi but kise bolte yr k bhai mene sunna nhi kitna ajeeb lagta yrr devanshhh im sorrryyyy mujhe tujhe ye sab nhi feel krvana chahte thi...kabhi kabhi kabhii nhi yrr never babyyy no ever i see my happiest version of my self kuchupuchuuu kabhi nhiii imm soo sorrrryyyy....i want youuu alwayss be mine januu i just need yooouuuuuu eachhh timeee sirf tu tuuuuu aur tuuu hi mujhe bbht achhhhaa lagta hai when someone say k bhai u have bf...i was like bhai yess and lookk kitna mast hai.....besttttt bestttttestt besttttt bestttt bf everrrrr muahhhhh januuu id want youu to be sad bcz of me mana galti kari nhi sunna but ye sab hua so i was planning some thing isliyeee im soooo sorryyy...januuu never yr kabhi nhi esa krungiii never plzz maafii maaffiiii kar do januu loveeee youuuuuu sooooo muchhhh yrr bhtttt saraaaaa misssiii youuu moree bht saraa alooottt i just want to be with youu alll time baat nhi hui thi isliye i came to your office pr idk bhai u happy or not but milna want to see your faceeee missssiii youuuu yrr bht saraaaaa plzzz maafii kar dooo dont want to hurt youuu kabhi nhii januuu kuchupuchuuu my mannnnn never and ever...............
   </div>
 
-  <div style="font-size:30px;">🧸🌷💗🌷🧸</div>
+  <div class="sparkle-line">🎀 🧸 🌷 💗 🌷 🧸 🎀</div>
 
   <section class="question">
-    <h2>Kya aapne mujhe maaf kiya? 🥺👉👈</h2>
+    <h2>Kya aapne mujhe maaf kiya? 🥺👉👈💗</h2>
+
     <p>
       Sach sach bataooo babyyyy! 🥹💗<br>
-      Aapki chhotuu si baby waitingggg haiii 🧸
+      Aapki chhotuu si baby waitingggg haiii 🧸💕
     </p>
 
     <div class="buttons">
       <button class="yes" id="yesBtn" onclick="sayYes()">
-        Yessss babyyyy! 💗
+        Yessss babyyyy! 💗🥹
       </button>
 
       <button class="no" id="noBtn" onclick="runAway()">
-        Nooooo 😤
+        Nooooo 😤💔
       </button>
     </div>
 
@@ -207,36 +310,66 @@ button {
   <section id="answer">
     <div class="teddy">🧸💋💗🧸</div>
 
+    <div class="sparkle-line">🌸✨🌷✨🌸</div>
+
     <div class="love">
       LOVEEEE YOUUU<br>
-      SOOO MUCHHHH!! 😭💗
+      SOOO MUCHHHH!! 😭💗💋
     </div>
 
-    <h2>MISSSSIII YOUUUU YRRRR! 🥹💋</h2>
+    <h2>MISSSSIII YOUUUU YRRRR! 🥹💋🫂</h2>
 
     <p>
       I WANT YOUUUU BABYYYYY! 🫂💘<br>
       I JUST WANNA LIVE WITH YOUUUU! 🏡💗<br>
       I NEED YOUUUUU IN MY LIFEEEE! 🥺❤️‍🩹<br><br>
-      Aapko ek tighttt wala hugggg 🤗<br>
-      Million jhappiyaannn 😚😚😚<br>
+
+      Aapko ek tighttt wala hugggg 🤗💕<br>
+      Million jhappiyaannn 😚😚😚💋<br>
       Aur endless kissiessss! 💋💋💋💋<br><br>
+
       MUAAAAAAHHHHHH BABYYYYYY! 😘💋💗
     </p>
 
     <div style="font-size:45px;">💐🧸💍💗🫂💋🌷</div>
-    <p class="big">You're my favourite personnn! 🎀</p>
+
+    <p class="big">You're my favourite personnn! 🎀🥹</p>
+
+    <div class="sparkle-line">୨୧ ♡ ୨୧ ♡ ୨୧</div>
   </section>
 
   <div class="footer">
-    Made with all my little hearttt 💗🎀<br>
-    For my babyyyy and only my babyyyy 🧸
+    Made with all my little hearttt 💗🎀✨<br>
+    For my babyyyy and only my babyyyy 🧸💋<br>
+    Forever your chhotuu si baby! 🥹💕
+  </div>
+
+  <div class="final-love">
+    <div class="sparkle-line">🎀 LAST BUT NOT LEAST 🎀</div>
+
+    <p>
+      PLEASEEE NEVER BE SADDD BABYYYY 😭💗<br>
+      YOUR BABY LOVES YOUUU SOOO MUCHHH! 🧸💋
+    </p>
+
+    <p style="font-size:18px;">AB EK BADA SA BABY CRYYYY 😭</p>
+
+    <span class="big-cry" aria-label="A very big crying face">😭</span>
+
+    <p style="font-size:18px;">
+      MAAN JAAAOOO NAAA PLZZZZ 🥺👉👈💗
+    </p>
+
+    <div class="sparkle-line">🧸💗🎀💋🌷💗🧸</div>
   </div>
 
 </div>
 
 <script>
-const symbols = ["💗", "💕", "💖", "💘", "🌸", "🎀"];
+const symbols = [
+  "💗", "💕", "💖", "💘", "🌸", "🎀",
+  "🧸", "✨", "🌷", "💋", "🥹", "🦋", "💞"
+];
 
 function createHeart() {
   const heart = document.createElement("span");
@@ -245,11 +378,13 @@ function createHeart() {
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = (15 + Math.random() * 22) + "px";
   heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
   document.body.appendChild(heart);
+
   setTimeout(() => heart.remove(), 8500);
 }
 
-setInterval(createHeart, 400);
+setInterval(createHeart, 300);
 
 let noCount = 0;
 
@@ -264,7 +399,9 @@ function runAway() {
     "Babyyyy pleaseee yes kar dooo 🥺🧸",
     "No button sharma raha haiii 😂💕",
     "Ek baar aur soch looo jaanuuu 😭💋",
-    "I love youuu so muchhh! 🥹💗"
+    "I love youuu so muchhh! 🥹💗",
+    "Areeee babyyyy maaf kar dooo naaa 🎀😭",
+    "Itna cute sa sorryyy toh banta haiii 🧸💞"
   ];
 
   tease.textContent = messages[(noCount - 1) % messages.length];
@@ -280,18 +417,29 @@ function runAway() {
 }
 
 function sayYes() {
-  document.getElementById("answer").style.display = "block";
+  const answer = document.getElementById("answer");
+
+  answer.style.display = "block";
+
   document.getElementById("tease").textContent =
-    "AAAAAA BABYYYYY I LOVEEEE YOUUUU 😭💗💋";
+    "AAAAAA BABYYYYY I LOVEEEE YOUUUU 😭💗💋🫂";
 
   document.getElementById("yesBtn").textContent =
-    "YAYYYYY I LOVEEEE YOUUU! 💋";
+    "YAYYYYY I LOVEEEE YOUUU! 💋🎀";
 
-  for (let i = 0; i < 45; i++) {
-    setTimeout(createHeart, i * 70);
+  // Make the NO button behave normally after YES is clicked.
+  const noBtn = document.getElementById("noBtn");
+  noBtn.style.position = "relative";
+  noBtn.style.left = "";
+  noBtn.style.top = "";
+  noBtn.style.zIndex = "";
+
+  // Extra cute heart and sparkle shower!
+  for (let i = 0; i < 55; i++) {
+    setTimeout(createHeart, i * 60);
   }
 
-  document.getElementById("answer").scrollIntoView({
+  answer.scrollIntoView({
     behavior: "smooth",
     block: "center"
   });
